@@ -1,0 +1,760 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yishak Restaurant</title>
+    <meta
+      name="description"
+      content="Yishak Restaurant — Celebrating the rich heritage of Ethiopian hospitality. From time-honored dishes to our traditional coffee ceremony, we bring flavor and community to your table."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;800&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- LOADER -->
+    <div id="loader">
+      <div class="loader-inner">
+        <div class="coffee-bean"></div>
+        <p>Brewing the experience…</p>
+      </div>
+    </div>
+
+    <!-- NAVIGATION BAR -->
+    <nav class="nav">
+      <div class="nav-logo">
+        <span class="logo-text"
+          >Yishak <span class="accent">Restaurant</span></span
+        >
+      </div>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#story">Story</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#reserve">Reserve</a></li>
+      </ul>
+      <div
+        class="nav-actions"
+        style="display: flex; align-items: center; gap: 16px"
+      >
+        <!-- Theme Toggle Button -->
+        <button
+          id="theme-toggle"
+          onclick="toggleTheme()"
+          aria-label="Toggle Theme"
+          style="
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid var(--border);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            color: var(--text);
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+          "
+        >
+          🌙
+        </button>
+
+        <div
+          class="cart-trigger"
+          onclick="toggleCart()"
+          style="
+            position: relative;
+            cursor: pointer;
+            padding: 8px 12px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            color: var(--text);
+          "
+        >
+          🛒
+          <span
+            id="cart-badge"
+            style="
+              background: var(--accent);
+              color: #000;
+              border-radius: 50%;
+              padding: 2px 7px;
+              font-weight: bold;
+              font-size: 0.8rem;
+              margin-left: 4px;
+            "
+            >0</span
+          >
+        </div>
+        <a href="#reserve" class="nav-cta">Book a Table</a>
+      </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section id="home" class="hero">
+      <div class="hero-content">
+        <span class="eyebrow">Est. 2026 · Addis Ababa Tradition</span>
+        <h1 class="hero-title">
+          Where <span class="accent">Ethiopian Food</span> Meets <br />Modern
+          Soul
+        </h1>
+        <p class="hero-sub">
+          Celebrating the rich heritage of Ethiopian hospitality. From
+          time-honored dishes to our traditional coffee ceremony, we bring
+          flavor and community to your table.
+        </p>
+        <div class="hero-ctas">
+          <a href="#menu" class="btn btn-primary">Explore the Menu</a>
+          <a href="#reserve" class="btn btn-ghost">Reserve Tonight</a>
+        </div>
+        <div class="hero-stats">
+          <div><strong>4.9★</strong><span>Google · 2.3k</span></div>
+          <div><strong>15+</strong><span>Signature Dishes</span></div>
+          <div><strong>3</strong><span>City Locations</span></div>
+        </div>
+      </div>
+      <div class="scroll-hint">Scroll ↓</div>
+    </section>
+
+    <!-- MENU SECTION -->
+    <section id="menu" class="section">
+      <div class="section-head">
+        <span class="eyebrow">The Menu</span>
+        <h2>Signature Dishes</h2>
+        <p>Hand-crafted, family recipes, locally sourced.</p>
+
+        <div
+          class="menu-filters"
+          style="
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 24px;
+            flex-wrap: wrap;
+          "
+        >
+          <button class="filter-btn active" onclick="filterMenu('all', event)">
+            All Items
+          </button>
+          <button class="filter-btn" onclick="filterMenu('mains', event)">
+            Main Dishes
+          </button>
+          <button class="filter-btn" onclick="filterMenu('drinks', event)">
+            Drinks & Coffee
+          </button>
+        </div>
+      </div>
+
+      <div class="menu-grid">
+        <!-- Main Dishes -->
+        <article class="dish-card" data-category="mains">
+          <div
+            class="dish-img"
+            style="
+              background: url(&quot;doro wot.jpg&quot;) center/cover no-repeat;
+            "
+          ></div>
+          <div class="dish-body">
+            <h3>Doro Wot</h3>
+            <p>
+              Slow-simmered chicken stew with berbere spice and hard-boiled egg.
+            </p>
+            <div
+              class="dish-footer"
+              style="
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+              "
+            >
+              <span class="price">1200 ETB</span>
+              <button
+                class="btn-add-cart"
+                onclick="addToOrder('Doro Wot', 1200)"
+              >
+                + Add
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <article class="dish-card" data-category="mains">
+          <div
+            class="dish-img"
+            style="
+              background: url(&quot;kitfo.jpg&quot;) center/cover no-repeat;
+            "
+          ></div>
+          <div class="dish-body">
+            <h3>Kitfo</h3>
+            <p>
+              Minced lean beef seasoned with mitmita and herb-infused butter.
+            </p>
+            <div
+              class="dish-footer"
+              style="
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+              "
+            >
+              <span class="price">1500 ETB</span>
+              <button class="btn-add-cart" onclick="addToOrder('Kitfo', 1500)">
+                + Add
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <article class="dish-card" data-category="mains">
+          <div
+            class="dish-img"
+            style="
+              background: url(&quot;beyaynetu.jpg&quot;) center/cover no-repeat;
+            "
+          ></div>
+          <div class="dish-body">
+            <h3>Beyaynetu</h3>
+            <p>A vibrant vegetarian platter of lentils, greens, and stews.</p>
+            <div
+              class="dish-footer"
+              style="
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+              "
+            >
+              <span class="price">800 ETB</span>
+              <button
+                class="btn-add-cart"
+                onclick="addToOrder('Beyaynetu', 800)"
+              >
+                + Add
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <article class="dish-card" data-category="mains">
+          <div
+            class="dish-img"
+            style="background: url(&quot;tibs.jpg&quot;) center/cover no-repeat"
+          ></div>
+          <div class="dish-body">
+            <h3>Tibs</h3>
+            <p>
+              Sautéed tender beef with rosemary, garlic, and roasted peppers.
+            </p>
+            <div
+              class="dish-footer"
+              style="
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+              "
+            >
+              <span class="price">1700 ETB</span>
+              <button class="btn-add-cart" onclick="addToOrder('Tibs', 1700)">
+                + Add
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <article class="dish-card" data-category="mains">
+          <div
+            class="dish-img"
+            style="
+              background: url(&quot;shiro.jpg&quot;) center/cover no-repeat;
+            "
+          ></div>
+          <div class="dish-body">
+            <h3>Shiro</h3>
+            <p>Creamy chickpea flour stew with garlic and ginger.</p>
+            <div
+              class="dish-footer"
+              style="
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+              "
+            >
+              <span class="price">1100 ETB</span>
+              <button class="btn-add-cart" onclick="addToOrder('Shiro', 1100)">
+                + Add
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <article class="dish-card" data-category="mains">
+          <div
+            class="dish-img"
+            style="
+              background: url(&quot;teresega.jpg&quot;) center/cover no-repeat;
+            "
+          ></div>
+          <div class="dish-body">
+            <h3>Teresega</h3>
+            <p>
+              Traditional Ethiopian raw beef delicacy, sliced into tender cubes
+              and served with spicy mitmita and awaze.
+            </p>
+            <div
+              class="dish-footer"
+              style="
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+              "
+            >
+              <span class="price">2000 ETB</span>
+              <button
+                class="btn-add-cart"
+                onclick="addToOrder('Teresega', 2000)"
+              >
+                + Add
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Drinks & Beverages -->
+        <article class="dish-card" data-category="drinks">
+          <div
+            class="dish-img"
+            style="
+              background: url(&quot;coffee.jpg&quot;) center/cover no-repeat;
+            "
+          ></div>
+          <div class="dish-body">
+            <h3>Coffee Ceremony</h3>
+            <p>Traditional Buna — roasted, brewed, served with popcorn.</p>
+            <div
+              class="dish-footer"
+              style="
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+              "
+            >
+              <span class="price">100 ETB</span>
+              <button
+                class="btn-add-cart"
+                onclick="addToOrder('Coffee Ceremony', 100)"
+              >
+                + Add
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <article class="dish-card" data-category="drinks">
+          <div
+            class="dish-img"
+            style="background: url(&quot;tea.jpg&quot;) center/cover no-repeat"
+          ></div>
+          <div class="dish-body">
+            <h3>Spiced Ethiopian Tea</h3>
+            <p>
+              Traditional black tea infused with aromatic cinnamon, cardamom,
+              and cloves.
+            </p>
+            <div
+              class="dish-footer"
+              style="
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+              "
+            >
+              <span class="price">85 ETB</span>
+              <button
+                class="btn-add-cart"
+                onclick="addToOrder('Spiced Ethiopian Tea', 85)"
+              >
+                + Add
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <article class="dish-card" data-category="drinks">
+          <div
+            class="dish-img"
+            style="background: url(&quot;milk.jpg&quot;) center/cover no-repeat"
+          ></div>
+          <div class="dish-body">
+            <h3>Fresh Milk</h3>
+            <p>
+              Warm, steamed fresh milk perfect on its own or paired with your
+              breakfast pastry.
+            </p>
+            <div
+              class="dish-footer"
+              style="
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+              "
+            >
+              <span class="price">120 ETB</span>
+              <button
+                class="btn-add-cart"
+                onclick="addToOrder('Fresh Milk', 120)"
+              >
+                + Add
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <article class="dish-card" data-category="drinks">
+          <div
+            class="dish-img"
+            style="
+              background: url(&quot;amboweha.jpg&quot;) center/cover no-repeat;
+            "
+          ></div>
+          <div class="dish-body">
+            <h3>Ambo Water</h3>
+            <p>
+              Classic, naturally carbonated sparkling mineral water from the
+              springs of Ambo.
+            </p>
+            <div
+              class="dish-footer"
+              style="
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+              "
+            >
+              <span class="price">70 ETB</span>
+              <button
+                class="btn-add-cart"
+                onclick="addToOrder('Ambo Water', 70)"
+              >
+                + Add
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <article class="dish-card" data-category="drinks">
+          <div
+            class="dish-img"
+            style="
+              background: url(&quot;water.jpg&quot;) center/cover no-repeat;
+            "
+          ></div>
+          <div class="dish-body">
+            <h3>Still Water (500ml)</h3>
+            <p>
+              Refreshing, pure bottled still water served perfectly chilled.
+            </p>
+            <div
+              class="dish-footer"
+              style="
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+              "
+            >
+              <span class="price">50 ETB</span>
+              <button
+                class="btn-add-cart"
+                onclick="addToOrder('Still Water', 50)"
+              >
+                + Add
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <article class="dish-card" data-category="drinks">
+          <div
+            class="dish-img"
+            style="
+              background: url(&quot;softdrink.jpg&quot;) center/cover no-repeat;
+            "
+          ></div>
+          <div class="dish-body">
+            <h3>Soft Drink</h3>
+            <p>
+              Your choice of chilled refreshing sodas (Coca-Cola, Fanta, or
+              Sprite).
+            </p>
+            <div
+              class="dish-footer"
+              style="
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+              "
+            >
+              <span class="price">60 ETB</span>
+              <button
+                class="btn-add-cart"
+                onclick="addToOrder('Soft Drink', 60)"
+              >
+                + Add
+              </button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- STORY SECTION -->
+    <section id="story" class="section story">
+      <div class="story-grid">
+        <div
+          class="story-visual"
+          style="
+            background: url(&quot;buna1.jpg&quot;) center/cover no-repeat;
+            min-height: 450px;
+            border-radius: 16px;
+            position: relative;
+          "
+        >
+          <div
+            class="floating-card"
+            style="
+              background: rgba(0, 0, 0, 0.85);
+              backdrop-filter: blur(8px);
+              position: absolute;
+              bottom: 20px;
+              left: 20px;
+              right: 20px;
+              width: auto;
+              max-width: none;
+              padding: 20px;
+              border: 1px solid var(--border);
+            "
+          >
+            <p style="color: #fff; text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5)">
+              "Buna" means coffee in Amharic — and at Yishak Restaurant,
+              everything begins with a shared cup.
+            </p>
+          </div>
+        </div>
+        <div class="story-text">
+          <span class="eyebrow">Our Story</span>
+          <h2>A heritage of traditional Ethiopian food, crafted with care.</h2>
+          <p>
+            Rooted in the timeless traditions of Ethiopian culinary arts, Yishak
+            Restaurant is dedicated to preserving the authentic flavors of our
+            heritage. We bring you the definitive traditional Ethiopian food
+            experience—where rich berbere spices, perfectly seasoned meats, and
+            slow-simmered stews meet to create an unforgettable communal feast
+            shared over freshly baked injera.
+          </p>
+          <ul class="story-list">
+            <li>✓ Authentic traditional Ethiopian main dishes</li>
+            <li>✓ Classic holiday favorites and everyday staples</li>
+            <li>✓ Freshly prepared injera served with every meal</li>
+            <li>✓ Rich, traditional vegetarian and fasting platters</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALLERY SECTION -->
+    <section id="gallery" class="section">
+      <div class="section-head">
+        <span class="eyebrow">Gallery</span>
+        <h2>Moments at Yishak Restaurant</h2>
+      </div>
+      <div class="gallery-grid">
+        <div
+          class="dish-img g-item g1"
+          style="
+            background: url(&quot;doro wot.jpg&quot;) center/cover no-repeat;
+          "
+        ></div>
+        <div
+          class="dish-img g-item"
+          style="background: url(&quot;coffee.jpg&quot;) center/cover no-repeat"
+        ></div>
+        <div
+          class="dish-img g-item"
+          style="background: url(&quot;kitfo.jpg&quot;) center/cover no-repeat"
+        ></div>
+        <div
+          class="dish-img g-item"
+          style="
+            background: url(&quot;beyaynetu.jpg&quot;) center/cover no-repeat;
+          "
+        ></div>
+        <div
+          class="dish-img g-item"
+          style="background: url(&quot;shiro.jpg&quot;) center/cover no-repeat"
+        ></div>
+        <div
+          class="dish-img g-item g6"
+          style="background: url(&quot;injera.jpg&quot;) center/cover no-repeat"
+        ></div>
+        <div
+          class="dish-img g-item"
+          style="
+            background: url(&quot;teresega.jpg&quot;) center/cover no-repeat;
+          "
+        ></div>
+        <div
+          class="dish-img g-item"
+          style="
+            background: url(&quot;sheklatebs.jpg&quot;) center/cover no-repeat;
+          "
+        ></div>
+        <div
+          class="dish-img g-item"
+          style="background: url(&quot;tea.jpg&quot;) center/cover no-repeat"
+        ></div>
+        <div
+          class="dish-img g-item"
+          style="background: url(&quot;milk.jpg&quot;) center/cover no-repeat"
+        ></div>
+        <div
+          class="dish-img g-item"
+          style="background: url(&quot;water.jpg&quot;) center/cover no-repeat"
+        ></div>
+        <div
+          class="dish-img g-item"
+          style="
+            background: url(&quot;softdrink.jpg&quot;) center/cover no-repeat;
+          "
+        ></div>
+      </div>
+    </section>
+
+    <!-- RESERVATION SECTION -->
+    <section id="reserve" class="section reserve">
+      <div class="reserve-card">
+        <span class="eyebrow">Reservations</span>
+        <h2>Save your seat at the table.</h2>
+        <p>Open Tuesday – Sunday · 5pm – 11pm</p>
+        <form
+          class="reserve-form"
+          onsubmit="
+            event.preventDefault();
+            this.querySelector('button').textContent =
+              '✓ Reserved — see you soon!';
+          "
+        >
+          <input type="text" placeholder="Your name" required />
+          <input type="email" placeholder="Email" required />
+
+          <div style="position: relative; width: 100%">
+            <input
+              type="date"
+              required
+              style="
+                width: 100%;
+                padding: 12px 40px 12px 15px;
+                background: rgba(255, 255, 255, 0.05);
+                border: 1px solid var(--border);
+                border-radius: 8px;
+                color: var(--text);
+                font-family: inherit;
+                box-sizing: border-box;
+                appearance: none;
+                -webkit-appearance: none;
+                margin-bottom: 15px;
+              "
+            />
+          </div>
+
+          <div style="position: relative; width: 100%">
+            <input
+              type="time"
+              required
+              style="
+                width: 100%;
+                padding: 12px 40px 12px 15px;
+                background: rgba(255, 255, 255, 0.05);
+                border: 1px solid var(--border);
+                border-radius: 8px;
+                color: var(--text);
+                font-family: inherit;
+                box-sizing: border-box;
+                appearance: none;
+                -webkit-appearance: none;
+                margin-bottom: 15px;
+              "
+            />
+          </div>
+
+          <select style="margin-bottom: 15px">
+            <option>1 guest</option>
+            <option>2 guests</option>
+            <option>3 guests</option>
+            <option>4 guests</option>
+            <option>5+ guests</option>
+          </select>
+          <button type="submit" class="btn btn-primary">Reserve Now</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="footer-grid">
+        <div>
+          <h3 class="logo-text">
+            Yishak <span class="accent">Restaurant</span>
+          </h3>
+          <p>
+            Where traditional Ethiopian flavor meets modern hospitality. Coffee,
+            culture, and community.
+          </p>
+        </div>
+        <div>
+          <h4>Visit Us</h4>
+          <p>Bole Road<br />Addis Ababa · Ethiopia</p>
+          <p>+251 91 234 5678</p>
+        </div>
+        <div>
+          <h4>Hours</h4>
+          <p>Mon – Sun<br />7:00 AM – 7:00 PM</p>
+        </div>
+        <div>
+          <h4>Follow</h4>
+          <p>@YishakRestaurant</p>
+          <p>Instagram · TikTok</p>
+        </div>
+      </div>
+      <div class="footer-bottom">© 2026 Yishak Restaurant. Made by Yishak.</div>
+    </footer>
+
+    <!-- SLIDING CART DRAWER -->
+    <div id="cart-drawer" class="cart-drawer">
+      <div class="drawer-header">
+        <h3>Your Order Basket</h3>
+        <button class="close-btn" onclick="toggleCart()">&times;</button>
+      </div>
+      <div id="cart-items" class="drawer-body">
+        <p class="empty-msg">Your basket is currently empty.</p>
+      </div>
+      <div class="drawer-footer">
+        <div class="total-row">
+          <span>Total Amount:</span>
+          <span id="cart-total">0 ETB</span>
+        </div>
+        <button class="checkout-btn" onclick="checkoutOrder()">
+          Place Food Order
+        </button>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
