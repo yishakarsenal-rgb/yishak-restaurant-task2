@@ -1,11 +1,10 @@
-/* Yishak Restaurant — Pure Black & Light Mode Theme System */
+/* Yishak Restaurant*/
 :root {
-  /* Default Pure Dark Mode Variables */
   --bg: #000000;
   --bg-soft: #0a0a0c;
   --surface: #141418;
   --primary: #c9302c;
-  --accent: #e8a93a;
+  --accent: #0e7c12;
   --text: #ffffff;
   --text-dim: #a0a0ab;
   --border: rgba(232, 169, 58, 0.2);
