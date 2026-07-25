@@ -638,3 +638,41 @@ body {
     display: none;
   }
 }
+@media (max-width: 768px) {
+  /* 1. Force the story grid to stack in a single column */
+  .story-grid {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+
+  /* 2. Fix the visual image container size */
+  .story-visual {
+    min-height: 280px !important;
+    width: 100% !important;
+  }
+
+  /* 3. Fix the floating quote card inside the image */
+  .floating-card {
+    position: relative !important;
+    inset: auto !important;
+    margin: 16px;
+    padding: 16px !important;
+    width: auto !important;
+  }
+
+  .floating-card p {
+    font-size: 0.9rem !important;
+    line-height: 1.5 !important;
+    word-break: normal !important;
+  }
+
+  /* 4. Fix typography scaling on mobile */
+  .story-text h2 {
+    font-size: 1.8rem !important;
+    line-height: 1.25 !important;
+  }
+
+  .story-text p {
+    font-size: 0.95rem !important;
+  }
+}
