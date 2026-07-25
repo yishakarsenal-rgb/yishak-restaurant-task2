@@ -566,23 +566,74 @@ body {
   padding-top: 30px;
   border-top: 1px solid var(--border);
 }
-
+/* MOBILE RESPONSIVE FIXES */
 @media (max-width: 768px) {
-  .nav-links {
-    display: none;
+  /* 1. Fix header layout padding & spacing */
+  .nav {
+    padding: 12px 4%;
+    gap: 8px;
   }
-  .story-grid {
-    grid-template-columns: 1fr;
-    gap: 40px;
+
+  /* Reduce logo font size so it fits on one line */
+  .nav-logo {
+    font-size: 1rem;
+    line-height: 1.2;
   }
-  .gallery-grid {
-    grid-template-columns: repeat(2, 1fr);
+
+  /* Compact top action items */
+  .nav-actions {
+    gap: 6px !important;
   }
-  .g1,
-  .g6 {
-    grid-column: span 1;
+
+  /* Hide desktop CTA text or make it compact */
+  .nav-cta {
+    padding: 6px 12px;
+    font-size: 0.75rem;
   }
-  .section {
-    padding: 80px 6%;
+
+  /* Compact Cart Badge */
+  .cart-trigger {
+    padding: 5px 8px !important;
+    font-size: 0.8rem;
+  }
+
+  /* 2. Fix Hero Section Padding (Prevents Header Overlap) */
+  .hero {
+    padding-top: 130px !important; /* Pushes content down so EST. 2026 is visible */
+    min-height: auto;
+    padding-bottom: 60px;
+  }
+
+  .eyebrow {
+    margin-top: 10px;
+    display: block;
+    font-size: 0.75rem;
+  }
+
+  .hero-title {
+    font-size: 2.2rem;
+    line-height: 1.15;
+  }
+
+  .hero-sub {
+    font-size: 0.95rem;
+    margin-bottom: 24px;
+  }
+
+  /* Hero buttons full width on small phones */
+  .hero-ctas {
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 40px;
+  }
+  @media (max-width: 480px) {
+    /* Hide top header CTA button on tiny phones to keep header super clean */
+    .nav-cta {
+      display: none;
+    }
+  }
+  .btn {
+    width: 100%;
+    text-align: center;
   }
 }
