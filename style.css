@@ -675,4 +675,12 @@ body {
   .story-text p {
     font-size: 0.95rem !important;
   }
+  .cart-drawer {
+    width: 85vw !important;
+    right: -85vw;
+  }
+
+  .cart-drawer.open {
+    right: 0 !important;
+  }
 }

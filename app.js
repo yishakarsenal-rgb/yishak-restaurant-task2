@@ -58,12 +58,23 @@ function addToOrder(name, price) {
   } else {
     userCart.push({ name, price, qty: 1 });
   }
+
   renderCart();
 
-  // Quick badge bump feedback animation
+  // 1. Animate cart badge
   const badge = document.getElementById("cart-badge");
-  badge.style.transform = "scale(1.3)";
-  setTimeout(() => (badge.style.transform = "scale(1)"), 200);
+  if (badge) {
+    badge.style.transform = "scale(1.4)";
+    setTimeout(() => (badge.style.transform = "scale(1)"), 200);
+  }
+
+  // 2. Automatically slide open the cart drawer on small screens so the user sees their item!
+  if (window.innerWidth <= 768) {
+    const drawer = document.getElementById("cart-drawer");
+    if (drawer && !drawer.classList.contains("open")) {
+      drawer.classList.add("open");
+    }
+  }
 }
 
 function renderCart() {
