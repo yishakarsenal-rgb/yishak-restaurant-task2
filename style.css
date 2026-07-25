@@ -626,14 +626,15 @@ body {
     gap: 12px;
     margin-bottom: 40px;
   }
-  @media (max-width: 480px) {
-    /* Hide top header CTA button on tiny phones to keep header super clean */
-    .nav-cta {
-      display: none;
-    }
-  }
+
   .btn {
     width: 100%;
     text-align: center;
+  }
+}
+@media (max-width: 480px) {
+  /* Hide top header CTA button on tiny phones to keep header super clean */
+  .nav-cta {
+    display: none;
   }
 }
