@@ -1,7 +1,4 @@
-// ==========================================
-// 1. THEME SWITCHER LOGIC (Dark / Light)
-// ==========================================
-
+// THEME SWITCHER LOGIC (Dark / Light)
 function initTheme() {
   const savedTheme = localStorage.getItem("theme") || "dark";
   if (savedTheme === "light") {
@@ -27,11 +24,7 @@ function toggleTheme() {
     toggleBtn.textContent = "☀️";
   }
 }
-
-// Initialize theme immediately on script load
 initTheme();
-
-// Safely hide loader
 window.addEventListener("load", () => {
   setTimeout(() => {
     const loader = document.getElementById("loader");
@@ -45,12 +38,8 @@ setTimeout(() => {
   if (loader) loader.classList.add("hidden");
 }, 1200);
 
-// ==========================================
-// 2. SHOPPING CART LOGIC
-// ==========================================
-
+// SHOPPING CART LOGIC
 let userCart = [];
-
 function addToOrder(name, price) {
   const existingItem = userCart.find((item) => item.name === name);
   if (existingItem) {
@@ -58,17 +47,12 @@ function addToOrder(name, price) {
   } else {
     userCart.push({ name, price, qty: 1 });
   }
-
   renderCart();
-
-  // 1. Animate cart badge
   const badge = document.getElementById("cart-badge");
   if (badge) {
     badge.style.transform = "scale(1.4)";
     setTimeout(() => (badge.style.transform = "scale(1)"), 200);
   }
-
-  // 2. Automatically slide open the cart drawer on small screens so the user sees their item!
   if (window.innerWidth <= 768) {
     const drawer = document.getElementById("cart-drawer");
     if (drawer && !drawer.classList.contains("open")) {
@@ -130,19 +114,14 @@ function checkoutOrder() {
   toggleCart();
 }
 
-// ==========================================
-// 3. MENU CATEGORY FILTERING
-// ==========================================
-
+// MENU CATEGORY FILTERING
 function filterMenu(category, event) {
   const cards = document.querySelectorAll(".dish-card");
   const buttons = document.querySelectorAll(".filter-btn");
-
   buttons.forEach((btn) => btn.classList.remove("active"));
   if (event && event.target) {
     event.target.classList.add("active");
   }
-
   cards.forEach((card) => {
     if (category === "all" || card.getAttribute("data-category") === category) {
       card.style.display = "block";
