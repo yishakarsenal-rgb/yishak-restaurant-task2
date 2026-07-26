@@ -14,7 +14,7 @@
   --font-body: "Inter", sans-serif;
 }
 
-/* Light Theme Variables */
+/* light theme variables */
 [data-theme="light"] {
   --bg: #f8f9fa;
   --bg-soft: #ffffff;
@@ -49,7 +49,7 @@ body {
     color 0.3s ease;
 }
 
-/* LOADER */
+/* loader */
 #loader {
   position: fixed;
   inset: 0;
@@ -88,7 +88,7 @@ body {
   }
 }
 
-/* NAV */
+/* navigation */
 .nav {
   position: fixed;
   top: 0;
@@ -146,7 +146,7 @@ body {
   color: #000;
 }
 
-/* HERO */
+/* hero */
 .hero {
   min-height: 100vh;
   display: flex;
@@ -249,7 +249,7 @@ body {
   text-transform: uppercase;
 }
 
-/* SECTIONS */
+/* section */
 .section {
   padding: 120px 6%;
 }
@@ -269,7 +269,7 @@ body {
   font-size: 1.1rem;
 }
 
-/* FILTER BUTTONS */
+/* button */
 .filter-btn {
   background: var(--surface);
   border: 1px solid var(--border);
@@ -288,7 +288,7 @@ body {
   font-weight: 600;
 }
 
-/* MENU GRID */
+/* menu grid */
 .menu-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -296,7 +296,6 @@ body {
   max-width: 1200px;
   margin: 0 auto;
 }
-
 .dish-card {
   background: var(--surface);
   border: 1px solid var(--border);
@@ -333,7 +332,6 @@ body {
   font-weight: 700;
   font-size: 1.2rem;
 }
-
 .btn-add-cart {
   background: var(--primary);
   color: white;
@@ -350,7 +348,7 @@ body {
   color: #000;
 }
 
-/* STORY */
+/* story */
 .story {
   background: var(--bg-soft);
 }
@@ -382,7 +380,7 @@ body {
   color: var(--text);
 }
 
-/* GALLERY */
+/* gallery */
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -391,15 +389,12 @@ body {
   max-width: 1200px;
   margin: 0 auto;
 }
-
 .g1 {
   grid-column: span 2;
 }
-
 .g-tall {
   grid-row: span 2;
 }
-
 .g-item {
   border-radius: 20px;
   background-position: center !important;
@@ -410,12 +405,12 @@ body {
     box-shadow 0.4s ease;
   cursor: pointer;
 }
-
 .g-item:hover {
   transform: scale(1.02);
   box-shadow: var(--shadow);
 }
-/* RESERVE */
+
+/* reserve */
 .reserve-card {
   max-width: 600px;
   margin: 0 auto;
@@ -451,7 +446,7 @@ body {
   font-size: 0.95rem;
 }
 
-/* CART DRAWER */
+/* cart drawer */
 .cart-drawer {
   position: fixed;
   top: 0;
@@ -469,7 +464,6 @@ body {
 .cart-drawer.open {
   right: 0;
 }
-
 .drawer-header {
   padding: 1.2rem;
   border-bottom: 1px solid var(--border);
@@ -529,7 +523,7 @@ body {
   color: #000;
 }
 
-/* FOOTER */
+/* footer */
 .footer {
   background: var(--bg-soft);
   padding: 80px 6% 30px;
@@ -566,92 +560,69 @@ body {
   padding-top: 30px;
   border-top: 1px solid var(--border);
 }
-/* MOBILE RESPONSIVE FIXES */
+
 @media (max-width: 768px) {
-  /* 1. Fix header layout padding & spacing */
   .nav {
     padding: 12px 4%;
     gap: 8px;
   }
-
-  /* Reduce logo font size so it fits on one line */
   .nav-logo {
     font-size: 1rem;
     line-height: 1.2;
   }
-
-  /* Compact top action items */
   .nav-actions {
     gap: 6px !important;
   }
-
-  /* Hide desktop CTA text or make it compact */
   .nav-cta {
     padding: 6px 12px;
     font-size: 0.75rem;
   }
-
-  /* Compact Cart Badge */
   .cart-trigger {
     padding: 5px 8px !important;
     font-size: 0.8rem;
   }
-
-  /* 2. Fix Hero Section Padding (Prevents Header Overlap) */
   .hero {
-    padding-top: 130px !important; /* Pushes content down so EST. 2026 is visible */
+    padding-top: 130px !important;
     min-height: auto;
     padding-bottom: 60px;
   }
-
   .eyebrow {
     margin-top: 10px;
     display: block;
     font-size: 0.75rem;
   }
-
   .hero-title {
     font-size: 2.2rem;
     line-height: 1.15;
   }
-
   .hero-sub {
     font-size: 0.95rem;
     margin-bottom: 24px;
   }
-
-  /* Hero buttons full width on small phones */
   .hero-ctas {
     flex-direction: column;
     gap: 12px;
     margin-bottom: 40px;
   }
-
   .btn {
     width: 100%;
     text-align: center;
   }
 }
 @media (max-width: 480px) {
-  /* Hide top header CTA button on tiny phones to keep header super clean */
   .nav-cta {
     display: none;
   }
 }
 @media (max-width: 768px) {
-  /* 1. Force the story grid to stack in a single column */
   .story-grid {
     grid-template-columns: 1fr !important;
     gap: 32px !important;
   }
-
-  /* 2. Fix the visual image container size */
   .story-visual {
     min-height: 280px !important;
     width: 100% !important;
   }
-
-  /* 3. Fix the floating quote card inside the image */
   .floating-card {
     position: relative !important;
     inset: auto !important;
@@ -666,7 +637,6 @@ body {
     word-break: normal !important;
   }
 
-  /* 4. Fix typography scaling on mobile */
   .story-text h2 {
     font-size: 1.8rem !important;
     line-height: 1.25 !important;
