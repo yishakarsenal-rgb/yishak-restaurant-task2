@@ -4,7 +4,7 @@ A modern, high-performance, and responsive web application built for **Yishak Re
 
 Features
 
-- Dynamic Theme System: Seamless toggle between Light Mode and Dark Mode with persistent state via `localStorage`.
+- Dynamic Theme System: Seamless toggle between Light Mode and Dark Mode with persistent state via localStorage.
 - Responsive Mobile Experience: Mobile-first layout adjustments including stackable section grids and full-width drawer navigation.
 - Interactive Menu & Filtering:Categorized dish catalog featuring authentic main dishes, drinks, and specialty coffee, with dynamic category filter buttons.
 - Active Shopping Cart: Real-time item count badge animations, expandable side drawer, and live price total calculation in ETB.
