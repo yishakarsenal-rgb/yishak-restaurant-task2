@@ -5,10 +5,10 @@ function initTheme() {
 
   if (savedTheme === "light") {
     document.documentElement.setAttribute("data-theme", "light");
-    if (toggleBtn) toggleBtn.textContent = "Light";
+    if (toggleBtn) toggleBtn.textContent = "ON";
   } else {
     document.documentElement.removeAttribute("data-theme");
-    if (toggleBtn) toggleBtn.textContent = "Dark";
+    if (toggleBtn) toggleBtn.textContent = "OFF";
   }
 }
 
@@ -19,11 +19,11 @@ function toggleTheme() {
   if (currentTheme === "light") {
     document.documentElement.removeAttribute("data-theme");
     localStorage.setItem("theme", "dark");
-    if (toggleBtn) toggleBtn.textContent = "Dark";
+    if (toggleBtn) toggleBtn.textContent = "OFF";
   } else {
     document.documentElement.setAttribute("data-theme", "light");
     localStorage.setItem("theme", "light");
-    if (toggleBtn) toggleBtn.textContent = "Light";
+    if (toggleBtn) toggleBtn.textContent = "ON";
   }
 }
 
