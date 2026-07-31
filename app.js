@@ -1,12 +1,14 @@
 // THEME SWITCHER LOGIC (Dark / Light)
 function initTheme() {
   const savedTheme = localStorage.getItem("theme") || "dark";
+  const toggleBtn = document.getElementById("theme-toggle");
+
   if (savedTheme === "light") {
     document.documentElement.setAttribute("data-theme", "light");
-    document.getElementById("theme-toggle").textContent = "☀️";
+    if (toggleBtn) toggleBtn.textContent = "Light";
   } else {
     document.documentElement.removeAttribute("data-theme");
-    document.getElementById("theme-toggle").textContent = "🌙";
+    if (toggleBtn) toggleBtn.textContent = "Dark";
   }
 }
 
@@ -17,14 +19,16 @@ function toggleTheme() {
   if (currentTheme === "light") {
     document.documentElement.removeAttribute("data-theme");
     localStorage.setItem("theme", "dark");
-    toggleBtn.textContent = "🌙";
+    if (toggleBtn) toggleBtn.textContent = "Dark";
   } else {
     document.documentElement.setAttribute("data-theme", "light");
     localStorage.setItem("theme", "light");
-    toggleBtn.textContent = "☀️";
+    if (toggleBtn) toggleBtn.textContent = "Light";
   }
 }
+
 initTheme();
+
 window.addEventListener("load", () => {
   setTimeout(() => {
     const loader = document.getElementById("loader");
@@ -40,6 +44,7 @@ setTimeout(() => {
 
 // SHOPPING CART LOGIC
 let userCart = [];
+
 function addToOrder(name, price) {
   const existingItem = userCart.find((item) => item.name === name);
   if (existingItem) {
@@ -72,8 +77,10 @@ function renderCart() {
     0,
   );
 
-  cartBadge.textContent = totalQty;
-  cartTotalDisplay.textContent = `${totalPrice} ETB`;
+  if (cartBadge) cartBadge.textContent = totalQty;
+  if (cartTotalDisplay) cartTotalDisplay.textContent = `${totalPrice} ETB`;
+
+  if (!cartItemsContainer) return;
 
   if (userCart.length === 0) {
     cartItemsContainer.innerHTML = `<p class="empty-msg">Your basket is currently empty.</p>`;
@@ -98,7 +105,8 @@ function renderCart() {
 }
 
 function toggleCart() {
-  document.getElementById("cart-drawer").classList.toggle("open");
+  const drawer = document.getElementById("cart-drawer");
+  if (drawer) drawer.classList.toggle("open");
 }
 
 function checkoutOrder() {
