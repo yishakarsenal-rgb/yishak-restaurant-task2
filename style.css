@@ -269,7 +269,6 @@ body {
   font-size: 1.1rem;
 }
 
-/* button */
 .filter-btn {
   background: var(--surface);
   border: 1px solid var(--border);
