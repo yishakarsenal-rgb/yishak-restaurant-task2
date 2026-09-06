@@ -410,7 +410,6 @@ body {
   box-shadow: var(--shadow);
 }
 
-/* reserve */
 .reserve-card {
   max-width: 600px;
   margin: 0 auto;
