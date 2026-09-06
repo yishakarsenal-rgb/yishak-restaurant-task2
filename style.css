@@ -288,7 +288,6 @@ body {
   font-weight: 600;
 }
 
-/* menu grid */
 .menu-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
