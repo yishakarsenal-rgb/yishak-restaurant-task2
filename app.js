@@ -119,7 +119,6 @@ function checkoutOrder() {
   toggleCart();
 }
 
-// MENU CATEGORY FILTERING
 function filterMenu(category, event) {
   const cards = document.querySelectorAll(".dish-card");
   const buttons = document.querySelectorAll(".filter-btn");
