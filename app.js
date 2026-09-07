@@ -40,7 +40,6 @@ setTimeout(() => {
   if (loader) loader.classList.add("hidden");
 }, 1200);
 
-// SHOPPING CART LOGIC
 let userCart = [];
 
 function addToOrder(name, price) {
