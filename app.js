@@ -1,4 +1,3 @@
-// THEME SWITCHER LOGIC (Dark / Light)
 function initTheme() {
   const savedTheme = localStorage.getItem("theme") || "dark";
   const toggleBtn = document.getElementById("theme-toggle");
