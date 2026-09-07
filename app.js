@@ -35,7 +35,6 @@ window.addEventListener("load", () => {
   }, 400);
 });
 
-// Backup safety timer for loader
 setTimeout(() => {
   const loader = document.getElementById("loader");
   if (loader) loader.classList.add("hidden");
