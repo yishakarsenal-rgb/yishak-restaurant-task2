@@ -14,5 +14,5 @@ Features
 Tech Stack
 
 - Frontend:HTML5, CSS3 (CSS Variables, Flexbox, CSS Grid)
-- Scripting:JavaScript (Vanilla ES6+)
+- Scripting:JavaScript
 - Deployment:Vercel
